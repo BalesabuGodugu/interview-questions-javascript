@@ -52,3 +52,34 @@ function permutations(str) {
 
 let result = permutations('abc');
 console.log(result);
+
+/*
+OR:
+
+function stringPermutations(str) {
+  var a = str.split('');
+  var results = new Set();
+  
+  swap = (a, i, j) => {
+    var temp = a[i];
+    a[i] = a[j];
+    a[j] = temp;
+  }
+  
+  permute = (a, start) => {
+    if (start >= a.length) {
+      results.add(a.join(''));
+    } else {
+      for (var i = start; i < a.length; i++) {
+        swap(a, start, i);
+        permute(a, start + 1);
+        swap(a, start, i);
+      }
+    }
+  }
+  
+  permute(a, 0);
+  return Array.from(results).sort();
+}
+
+*/
