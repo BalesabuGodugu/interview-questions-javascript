@@ -22,7 +22,7 @@ class Node {
 function traverse (tree) {
   if (!tree) return;
   
-  let quque = [];
+  const quque = [];
   quque.push(tree);
   
   while (quque.length > 0) {
