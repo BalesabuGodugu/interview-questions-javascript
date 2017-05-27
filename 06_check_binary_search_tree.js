@@ -9,7 +9,7 @@ class Node {
 }
 
 // o (n)
-function isBTS(n) {
+function isBST(n) {
 
 	var isBSTHelper = function (n, min, max) {
 		if (!n) return true;
@@ -49,7 +49,7 @@ let left = new Node(3, null, null);
 let right = new Node(6, null, null);
 let tree = new Node(5, left, right);
 
-console.log(isBTS(tree));
+console.log(isBST(tree));
 
 inorder(tree);
 //postorder(tree);
