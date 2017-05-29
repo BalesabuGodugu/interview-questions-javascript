@@ -36,7 +36,6 @@ function concatenate (a ,b) {
   return a;
 }
 
-// BFS
 function treeToList(n) {
   if (n === null) return n;
   let leftList = treeToList(n.left);
