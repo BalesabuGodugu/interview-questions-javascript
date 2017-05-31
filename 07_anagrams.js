@@ -1,5 +1,9 @@
-// capitalization
-// o (n)
+/*
+	Given two strings, write a function t0 determine whether thery are anagrams.
+
+	capitalization
+	o (n)
+*/
 
 function isAnagrams(s1, s2) {
 	if (s1.length !== s2.length) return false;

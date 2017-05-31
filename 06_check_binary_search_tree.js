@@ -1,6 +1,6 @@
 /* 
 Given a binary tree, write a function to test if the tree is a binary search tree.
-always check values equal to the parent should go left or right
+always check values equal to the parent should go to the left or to the right
 */
 
 class Node {
