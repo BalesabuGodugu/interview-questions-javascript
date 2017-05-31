@@ -8,7 +8,7 @@ class Node {
 
 class MaxStack extends LinkedList {
 
-	constructor () {  
+	constructor () {
 		this.stack = null;
 		this.max = null;
 	}
