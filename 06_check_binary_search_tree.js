@@ -11,7 +11,7 @@ class Node {
 // o (n)
 function isBST(n) {
 
-	var isBSTHelper = function (n, min, max) {
+	let isBSTHelper = (n, min, max) => {
 		if (!n) return true;
 		if (n.value < min || n.value > max) return false;
 		return isBSTHelper(n.left, min, n.value) && isBSTHelper(n.right, n.value + 1, max); // n.value + 1 we dont want it to be equal
@@ -20,7 +20,7 @@ function isBST(n) {
 	return isBSTHelper(n, Number.MAX_VALUE, Number.MIN_VALUE);
 }
 
-function dfs(node){
+function preorder(node){
   if(node){
     console.log(node.value);
     dfs(node.left);
@@ -28,7 +28,6 @@ function dfs(node){
   }
 }
 
-// bfs
 function inorder(node){
    if(node){
       inorder(node.left);
