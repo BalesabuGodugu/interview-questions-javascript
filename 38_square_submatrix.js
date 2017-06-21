@@ -17,7 +17,7 @@ Solution:
 [0, 0, 0, 0]
 
 Mirrors:
-check size of the square that the element belongs to.
+check the size of the square that the current element belongs to.
 check it from left and top
 
 [1, 1, 1, 0]
@@ -33,9 +33,9 @@ Time and Space -> O(n^2)
 
 const assert = (actual, expected, testName) => {
   if (actual === expected) {
-    return actual + ' = '+ expected + ' => passed';
+    return `\u2713 PASSED => ${actual} === ${expected}`;
   } else {
-    return 'FAILED ['+ testName +'] Expected "' + expected + '", but got "' + actual + '"';
+    return `\u26D4 FAILED [${testName}] Expected "${expected}", but got "${actual}"`;
   }
 };
 
