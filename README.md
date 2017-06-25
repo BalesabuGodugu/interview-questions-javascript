@@ -39,6 +39,6 @@
 - 36_bit_int_modulus.js
 - 37_random_linked_list.js
 - 38_square_submatrix.js
-- 39_shortest_path.js
 	- Solution: Make a matrix mirror
+- 39_shortest_path.js
 - 50_nested_flat_data.js
