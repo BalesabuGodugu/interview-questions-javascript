@@ -42,29 +42,29 @@ search(9)
 O(n + m)
 */
 
-function matrixSearch (matrix, x) {
-  if (!matrix || matrix.length === 0 || matrix[0].length === 0) return false;
-  if (!x) return false;
-  
-  let n = matrix[0].length;
-  let m = matrix.length;
-  
-  let row = 0;
-  let column = m - 1;
-  
-  while (row < n && column >= 0){
-    //console.log(matrix[row][column]);
-    if (matrix[row][column] === x) return true;
-    if (matrix[row][column] < x) row++;
-    else column--;
-  }
-  
-  return false;
+function matrixSearch(matrix, x) {
+    if (!matrix || matrix.length === 0 || matrix[0].length === 0) return false;
+    if (!x) return false;
+
+    let n = matrix[0].length;
+    let m = matrix.length;
+
+    let row = 0;
+    let column = m - 1;
+
+    while (row < n && column >= 0) {
+        //console.log(matrix[row][column]);
+        if (matrix[row][column] === x) return true;
+        if (matrix[row][column] < x) row++;
+        else column--;
+    }
+
+    return false;
 }
 
 let matrix = [
-  [0,   1,  2,  3],
-  [4,   5,  6,  7],
-  [8,   9, 10, 11],
-  [12, 13, 14, 15]];
+    [0, 1, 2, 3],
+    [4, 5, 6, 7],
+    [8, 9, 10, 11],
+    [12, 13, 14, 15]];
 console.log(matrixSearch(matrix, 9));

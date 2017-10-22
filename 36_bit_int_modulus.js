@@ -1,7 +1,7 @@
 /*
 Given a list of bytes a, each representing one byte of a larger
 integer (ie. {0x12, 0x34, 0x56, 0x78} representing the integer
-0x12345678), and an interger b, find a % b.
+0x12345678), and an integer b, find a % b.
 
 mod({0x03, 0xED, 10}) => 5
 0x03ED
@@ -25,26 +25,26 @@ long division :
 */
 
 const assert = (actual, expected, testName) => {
-  if (actual === expected) {
-    return `\u2713 PASSED => ${actual} === ${expected}`;
-  } else {
-    return `\u26D4 FAILED [${testName}] Expected "${expected}", but got "${actual}"`;
-  }
+    if (actual === expected) {
+        return `\u2713 PASSED => ${actual} === ${expected}`;
+    } else {
+        return `\u26D4 FAILED [${testName}] Expected "${expected}", but got "${actual}"`;
+    }
 };
 
-function mod (a, b) {
-  let m = 0;
-  for (var i = 0; i < a.length; i++) {
-    m <<= 8;
-    m += (a[i] & 0xFF);
-    m %= b;
-  }
+function mod(a, b) {
+    let m = 0;
+    for (let i = 0; i < a.length; i++) {
+        m <<= 8;
+        m += (a[i] & 0xFF);
+        m %= b;
+    }
 
-  return m;
+    return m;
 }
 
-let testcase1 = mod([0x03, 0xED], 10);
-console.log(assert(testcase1, 5, 'mod'));
+let testCase1 = mod([0x03, 0xED], 10);
+console.log(assert(testCase1, 5, 'mod'));
 
-let testcase2 = mod([0x03, 0xED], 10);
-console.log(assert(testcase2, 2, 'mod'));
+let testCase2 = mod([0x03, 0xED], 10);
+console.log(assert(testCase2, 2, 'mod'));
