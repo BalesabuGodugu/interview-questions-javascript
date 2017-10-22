@@ -12,26 +12,26 @@ tree :
 */
 
 class Node {
-	constructor (value) {
-		this.value = value;
-		this.left = null;
-		this.right = null;
-	}
+    constructor(value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
 }
 
-function traverse (tree) {
-  if (!tree) return;
-  
-  const quque = [];
-  quque.push(tree);
-  
-  while (quque.length > 0) {
-    let curr = quque.shift();
-    console.log(curr.value);
-    
-    if (curr.left !== null) quque.push(curr.left);
-    if (curr.right !== null) quque.push(curr.right);
-  }
+function traverse(tree) {
+    if (!tree) return;
+
+    const queue = [];
+    queue.push(tree);
+
+    while (queue.length > 0) {
+        let curr = queue.shift();
+        console.log(curr.value);
+
+        if (curr.left !== null) queue.push(curr.left);
+        if (curr.right !== null) queue.push(curr.right);
+    }
 }
 
 let left = new Node(2);
