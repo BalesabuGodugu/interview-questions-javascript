@@ -18,59 +18,58 @@ reverse -> o(n) + o(n) = o(2n) -> o(n)
 => o(n^2)
  
 */
- 
+
 class Stack {
-  constructor () {
-    this.data = [];
-  }
-  
-  get length () {
-    return this.data.length;
-  }
- 
-  push (input) {
-    this.data.push(input);
-  }
- 
-  pop () {
-    return this.data.pop();
-  }
-  
-  peak () {
-    return this.data[this.length - 1];
-  }
-  
-  isEmpty () {
-    if (this.data.length > 0) return false;
-    return true;
-  }
+    constructor() {
+        this.data = [];
+    }
+
+    get length() {
+        return this.data.length;
+    }
+
+    push(input) {
+        this.data.push(input);
+    }
+
+    pop() {
+        return this.data.pop();
+    }
+
+    peak() {
+        return this.data[this.length - 1];
+    }
+
+    isEmpty() {
+        return (!this.data.length > 0);
+    }
 }
- 
-function insertAtBottom (stack, x) {
-  if (stack.isEmpty()) {
-    stack.push(x);
-    return;
-  }
-  let temp = stack.pop();
-  insertAtBottom(stack, x);
-  stack.push(temp);
+
+function insertAtBottom(stack, x) {
+    if (stack.isEmpty()) {
+        stack.push(x);
+        return;
+    }
+    let temp = stack.pop();
+    insertAtBottom(stack, x);
+    stack.push(temp);
 }
- 
-function reverse (stack) {
-  if (stack.isEmpty()) return stack;
-  let temp = stack.pop();
-  reverse(stack);
-  insertAtBottom(stack, temp);
-  return stack;
+
+function reverse(stack) {
+    if (stack.isEmpty()) return stack;
+    let temp = stack.pop();
+    reverse(stack);
+    insertAtBottom(stack, temp);
+    return stack;
 }
- 
- 
+
+
 let stack = new Stack();
 stack.push(1);
 stack.push(2);
 stack.push(3);
 stack.push(4);
- 
+
 console.log(stack);
 console.log(reverse(stack));
  

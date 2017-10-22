@@ -7,7 +7,7 @@
    / \   \
   4   5   6
         
-  Two defination of balanced tree:
+  Two definition of balanced tree:
   
   * binary tree is balanced if for each node it holds that the number of inner nodes in the left subtree and the number of inner nodes in the right subtree differ by at most 1.
  
@@ -15,38 +15,37 @@
  
  
   Solution:
-  Is every subtree balancd?
+  Is every subtree balanced?
   if it is not balanced -> height = -1
 */
 
 class Node {
-	constructor (value) {
-		this.value = value;
-		this.left = null;
-		this.right = null;
-	}
+    constructor(value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
 }
 
-function isBalanced (n) {
-	if (balancedHeight(n) > -1) return true;
-	return false;
+function isBalanced(n) {
+    return (balancedHeight(n) > -1);
 }
 
-function balancedHeight (n) {
-	if (!n) return 0;
-	
-	// height of childes
-	let h1 = balancedHeight(n.left);
-	let h2 = balancedHeight(n.right);
+function balancedHeight(n) {
+    if (!n) return 0;
 
-	if (h1 === -1 || h2 === -1) return -1;
-	if (Math.abs(h1 - h2) > 1) return -1;
+    // height of childes
+    let h1 = balancedHeight(n.left);
+    let h2 = balancedHeight(n.right);
 
-	// the height of a subtree is the depth 
-	// of the longest branch in that tree
-	if (h1 > h2) return h1 +1;
-	
-	return h2 + 1;
+    if (h1 === -1 || h2 === -1) return -1;
+    if (Math.abs(h1 - h2) > 1) return -1;
+
+    // the height of a subtree is the depth
+    // of the longest branch in that tree
+    if (h1 > h2) return h1 + 1;
+
+    return h2 + 1;
 }
 
 /*
