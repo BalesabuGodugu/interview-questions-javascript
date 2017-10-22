@@ -14,8 +14,8 @@
 */
 
 function rotate(x, N) {
-	const BITS_IN_INTEGER = 32;
-	return (x >> N | x << (BITS_IN_INTEGER - N))
+    const BITS_IN_INTEGER = 32;
+    return (x >> N | x << (BITS_IN_INTEGER - N))
 }
 
 console.log(rotate('0xFFFF0000', 8));

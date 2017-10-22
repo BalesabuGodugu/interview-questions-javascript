@@ -15,34 +15,34 @@
 
 function mergeArrays(a, b, aLength, bLength) {
 
-	if (aLength + bLength > a.length) throw new Error();
+    if (aLength + bLength > a.length) throw new Error();
 
-	let aIndex = aLength - 1; // Array A Index
-	let bIndex = bLength - 1; // Array B Index
-	let mIndex = aLength + bLength -1; // Merge Index
+    let aIndex = aLength - 1; // Array A Index
+    let bIndex = bLength - 1; // Array B Index
+    let mIndex = aLength + bLength - 1; // Merge Index
 
 
-	while (aIndex >= 0 && bIndex >= 0) {
+    while (aIndex >= 0 && bIndex >= 0) {
 
-		if(a[aIndex] > b[bIndex]) {
-			a[mIndex] = a[aIndex];
-			aIndex--;
-		} else {
-			a[mIndex] = b[bIndex];
-			bIndex--;
-		}
+        if (a[aIndex] > b[bIndex]) {
+            a[mIndex] = a[aIndex];
+            aIndex--;
+        } else {
+            a[mIndex] = b[bIndex];
+            bIndex--;
+        }
 
-		mIndex--;
-	}
+        mIndex--;
+    }
 
-	// copy the rest of the array B
-	while (bIndex >= 0) {
-		a[mIndex] = b[bIndex];
-		bIndex--;
-		mIndex--;
-	}
+    // copy the rest of the array B
+    while (bIndex >= 0) {
+        a[mIndex] = b[bIndex];
+        bIndex--;
+        mIndex--;
+    }
 
-	return a;
+    return a;
 }
 
 //

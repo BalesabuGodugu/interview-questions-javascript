@@ -3,33 +3,33 @@
 // ^
 //^
 class Node {
-	constructor(value) {
-		this.value = value;
-		this.next = null;
-	}
+    constructor(value) {
+        this.value = value;
+        this.next = null;
+    }
 }
 
 splitALinkedList = (list) => {
-	if (list === null) return null;
-	let runner = list.next;
+    if (list === null) return null;
+    let runner = list.next;
 
-	while (list) {
-		if (runner.next === null) break;
-		list = list.next;
-runner = runner.next.next; // run on ahead
-}
+    while (list) {
+        if (runner.next === null) break;
+        list = list.next;
+        runner = runner.next.next; // run on ahead
+    }
 
-let toReturn = list.next;
-list.next = null;
-return toReturn
-}
+    let toReturn = list.next;
+    list.next = null;
+    return toReturn
+};
 
 printLinkedList = (node) => {
-	while (node) {
-		console.log(node.value);
-		node = node.next;
-	}
-}
+    while (node) {
+        console.log(node.value);
+        node = node.next;
+    }
+};
 
 let n1 = new Node(1);
 let n2 = new Node(2);
